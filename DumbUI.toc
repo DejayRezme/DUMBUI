@@ -1,9 +1,13 @@
-## Interface: 90002
+## Interface: 90003
 ## Title: DumbUI
 ## Notes: Some notes about this addon.
 ## Author: Dejay Rezme
 ## Version: 9.0.3
+## SavedVariables: DumbUIDB
 
-embeds.xml
+Libs\embeds.xml
+Localization\Localization.xml
 
 DumbUI.lua
+DumbUI-Options.lua
+DumbUI-MinimapButton.lua
