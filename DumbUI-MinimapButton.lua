@@ -7,13 +7,14 @@ local DB
 local iconLDB
 local icon
 
-function DumbUI:MinimapButtonInitialize()
+function DumbUI:InitializeMinimapButton()
 	DB = DumbUI.db.profile
 
 	iconLDB = LibStub("LibDataBroker-1.1"):NewDataObject(DumbUI.name, {
 		type = "launcher",
 		text = DumbUI.name,
-		icon = "Interface\\AddOns\\DumbUI\\Images\\minimapIcon",
+		--icon = "Interface\\AddOns\\DumbUI\\Images\\minimapIcon",
+		icon = "Interface\\Icons\\spell_holy_prayerofspirit",
 		OnClick = function(_, button) DumbUI:MinimapOnClick(button) end,
 		OnTooltipShow = function(tooltip) DumbUI:MinimapOnTooltipShow(tooltip) end,
 	})
@@ -33,8 +34,8 @@ function DumbUI:MinimapOnClick(button)
 		if InterfaceOptionsFrame:IsShown() then
 			InterfaceOptionsFrame:Hide();
 		else
+			InterfaceOptionsFrame_Show()
 			InterfaceOptionsFrame_OpenToCategory(DumbUI.name)
-			--InterfaceOptionsFrame_OpenToCategory(DumbUI.name)
 		end
 	elseif button == "RightButton" then
 		-- whatever should we do?
@@ -45,10 +46,8 @@ function DumbUI:MinimapOnTooltipShow(tooltip)
 	tooltip:SetText(DumbUI.name, 1, 1, 1)
 	--the formatting for the following strings is such that the key combo is in yellow, and the description is in white. This helps it be more readable at a glance
 	--another route would be to use AddDoubleLine, to have a left justified string and a right justified string on the same line
-	tooltip:AddLine(L["Left-Click"] .. ": " .. "|cFFFFFFFF"..L["Configure Bars"])
-	tooltip:AddLine(L["Right-Click"] .. ": " .. "|cFFFFFFFF"..L["Configure Buttons"])
-	tooltip:AddLine(L["Shift"] .. " + " .. L["Left-Click"] .. ": " .. "|cFFFFFFFF"..L["Toggle Keybind Mode"])
-	tooltip:AddLine(L["Shift"] .. " + " .. L["Right-Click"] .. ": " .. "|cFFFFFFFF"..L["Open the Interface Menu"])
+	tooltip:AddLine("This is dumb UI")
+	tooltip:AddLine("Dejay's Ultimate Multiboxing UI")
 
 	tooltip:Show()
 end
