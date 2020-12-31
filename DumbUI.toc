@@ -1,0 +1,9 @@
+## Interface: 90002
+## Title: DumbUI
+## Notes: Some notes about this addon.
+## Author: Dejay Rezme
+## Version: 9.0.3
+
+embeds.xml
+
+DumbUI.lua
